@@ -1,2 +1,2 @@
 # PCA
-https://codecov.io/gh/awllee/SC1ExamplePackage
+[![Build Status](https://travis-ci.com/eenticott/PCA.svg?branch=main)](https://travis-ci.com/eenticott/PCA)
