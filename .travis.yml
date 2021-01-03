@@ -3,7 +3,7 @@ dist: xenial
 cache: packages
 branches:
   only:
-    - master
+    - main
 
 r_github_packages:
   - r-lib/covr
