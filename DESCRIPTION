@@ -3,9 +3,11 @@ Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
 Author: Euan Enticott
-Maintainer: Euan Enticott
+Maintainer: Euan Enticott <euanenticott@gmail.com>
 Description: An R package for implementing PCA procedures
 License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Suggests: 
+    testthat
