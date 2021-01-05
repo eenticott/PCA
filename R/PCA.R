@@ -31,7 +31,7 @@ centre <- function(X, standardize = F) {
 #' @export
 #'
 #' @examples data(iris)
-#' pca_iris <- pca(iris[,-5], F, 0.95)
+#' pca_iris <- pca(iris[,-5], FALSE, 0.95)
 pca <- function(X, standardize,  threshold_var) {
   Z <- centre(as.matrix(X), standardize)
   n <- ncol(X)
