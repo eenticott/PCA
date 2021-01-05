@@ -21,5 +21,5 @@ Title
 }
 \examples{
 data(iris)
-pca_iris <- pca(iris[,-5], F, 0.95)
+pca_iris <- pca(iris[,-5], FALSE, 0.95)
 }
