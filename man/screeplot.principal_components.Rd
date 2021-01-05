@@ -18,5 +18,6 @@ A screeplot showing the weighting and cumulative weighting of the components
 Title
 }
 \examples{
+pca_iris <- pca(iris[,-5], FALSE, 0.95)
 screeplot(pca_iris)
 }

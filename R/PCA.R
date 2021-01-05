@@ -69,7 +69,8 @@ pca <- function(X, standardize,  threshold_var) {
 #' @return Prints basic information regarding the principal components
 #' @export
 #'
-#' @examples print(pca_iris)
+#' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
+#' print(pca_iris)
 print.principal_components <- function(ob) {
   cat(sprintf("Standard deviations:\n"))
   print(ob$sd)
@@ -85,7 +86,8 @@ print.principal_components <- function(ob) {
 #' @return A summary providing the weights of each of the components
 #' @export
 #'
-#' @examples summary(pca_iris)
+#' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
+#' summary(pca_iris)
 summary.principal_components <- function(ob) {
   ob$weights[,"Cumulative Weight"] <- cumsum(ob$weights[,"Weight"])
   print(ob$weights)
@@ -101,7 +103,8 @@ summary.principal_components <- function(ob) {
 #' @return A biplot of the principal components equivalent to that described by Gower and Hand (1996)
 #' @export
 #'
-#' @examples plot(pca_iris, choices = c(1, 2),  vectors = TRUE, vector_names = TRUE)
+#' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
+#' plot(pca_iris, choices = c(1, 2),  vectors = TRUE, vector_names = TRUE)
 plot.principal_components <- function(pca_ob, choices = c(1, 2), vectors = TRUE, vector_names = TRUE) {
   i <- choices[1]
   j <- choices[2]
@@ -192,7 +195,8 @@ plot.principal_components <- function(pca_ob, choices = c(1, 2), vectors = TRUE,
 #' @return A screeplot showing the weighting and cumulative weighting of the components
 #' @export
 #'
-#' @examples screeplot(pca_iris)
+#' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
+#' screeplot(pca_iris)
 screeplot.principal_components <- function(pca, threshold = NULL) {
   x <- pca$weights[,1]
   y <- pca$weights[,2]

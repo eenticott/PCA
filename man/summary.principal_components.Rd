@@ -16,5 +16,6 @@ A summary providing the weights of each of the components
 Title
 }
 \examples{
+pca_iris <- pca(iris[,-5], FALSE, 0.95)
 summary(pca_iris)
 }

@@ -22,5 +22,6 @@ A biplot of the principal components equivalent to that described by Gower and H
 Biplot for principal components
 }
 \examples{
+pca_iris <- pca(iris[,-5], FALSE, 0.95)
 plot(pca_iris, choices = c(1, 2),  vectors = TRUE, vector_names = TRUE)
 }

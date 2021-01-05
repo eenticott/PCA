@@ -16,5 +16,6 @@ Prints basic information regarding the principal components
 Title
 }
 \examples{
+pca_iris <- pca(iris[,-5], FALSE, 0.95)
 print(pca_iris)
 }
