@@ -195,6 +195,7 @@ plot.principal_components <- function(pca_ob, choices = c(1, 2), vectors = TRUE,
 #' @return A screeplot showing the weighting and cumulative weighting of the components
 #' @export
 #'
+#' @import  stats
 #' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
 #' screeplot(pca_iris)
 screeplot.principal_components <- function(pca, threshold = NULL) {
