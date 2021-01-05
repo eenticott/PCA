@@ -2,7 +2,7 @@
 % Please edit documentation in R/PCA.R
 \name{centre}
 \alias{centre}
-\title{Title}
+\title{Centres and optionally standardizes a given numeric matrix X}
 \usage{
 centre(X, standardize = F)
 }
@@ -15,7 +15,7 @@ centre(X, standardize = F)
 X a centred matrix
 }
 \description{
-Title
+Centres and optionally standardizes a given numeric matrix X
 }
 \examples{
 X <- matrix(seq(1:9))
