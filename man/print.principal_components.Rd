@@ -2,18 +2,20 @@
 % Please edit documentation in R/PCA.R
 \name{print.principal_components}
 \alias{print.principal_components}
-\title{Title}
+\title{Print for principal component object}
 \usage{
-\method{print}{principal_components}(ob)
+\method{print}{principal_components}(x, ...)
 }
 \arguments{
-\item{ob}{An object of class "principal components"}
+\item{x}{An object of class "principal_components"}
+
+\item{...}{generic arguments}
 }
 \value{
 Prints basic information regarding the principal components
 }
 \description{
-Title
+Print for principal component object
 }
 \examples{
 pca_iris <- pca(iris[,-5], FALSE, 0.95)

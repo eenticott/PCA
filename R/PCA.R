@@ -62,51 +62,59 @@ pca <- function(X, standardize,  threshold_var) {
 
 }
 
-#' Title
+#' Print for principal component object
 #'
-#' @param ob An object of class "principal components"
+#' @param x An object of class "principal_components"
+#' @param ... generic arguments
 #'
 #' @return Prints basic information regarding the principal components
+#' @rdname print.principal_components
 #' @export
 #'
 #' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
 #' print(pca_iris)
-print.principal_components <- function(ob) {
+print.principal_components <- function(x, ...) {
   cat(sprintf("Standard deviations:\n"))
-  print(ob$sd)
+  print(x$sd)
   cat(sprintf("\n PC rotations \n"))
-  print(ob$pca_directions)
+  print(x$pca_directions)
 }
 
 
-#' Title
+#' Summary for principal component object
 #'
-#' @param ob An object of class "principal components"
+#' @param object An object of class "principal_components"
+#' @param ... generic arguments
 #'
 #' @return A summary providing the weights of each of the components
+#' @rdname summary.principal_components
 #' @export
 #'
 #' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
 #' summary(pca_iris)
-summary.principal_components <- function(ob) {
+summary.principal_components <- function(object, ...) {
+  ob <- object
   ob$weights[,"Cumulative Weight"] <- cumsum(ob$weights[,"Weight"])
   print(ob$weights)
 }
 
 #' Biplot for principal components
 #'
-#' @param pca_ob An object of class "principal components"
+#' @param x An object of class "principal_components"
+#' @param ... generic arguments
 #' @param choices Indices declaring which of the PC's you want to plot
 #' @param vectors A boolean declaring whether to include vectors representing the constituents of the principal components
 #' @param vector_names A boolean declaring whether to label the vectors
 #'
 #' @return A biplot of the principal components equivalent to that described by Gower and Hand (1996)
+#' @rdname plot.principal_components
 #' @export
 #'
 #' @import graphics
 #' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
 #' plot(pca_iris, choices = c(1, 2),  vectors = TRUE, vector_names = TRUE)
-plot.principal_components <- function(pca_ob, choices = c(1, 2), vectors = TRUE, vector_names = TRUE) {
+plot.principal_components <- function(x, ..., choices = c(1, 2), vectors = TRUE, vector_names = TRUE) {
+  pca_ob <- x
   i <- choices[1]
   j <- choices[2]
 
@@ -188,18 +196,22 @@ plot.principal_components <- function(pca_ob, choices = c(1, 2), vectors = TRUE,
   }
 }
 
-#' Title
+#' Screeplot for principal_components objectr
 #'
-#' @param pca An object of class "principal components"
+#' @param x An object of class "principal_components"
+#' @param ... generic arguments
 #' @param threshold A threshold that you desire the components to cross, will be plotted if value given
 #'
 #' @return A screeplot showing the weighting and cumulative weighting of the components
+#' @rdname screeplot.principal_components
 #' @export
 #'
 #' @import  stats
+#'
 #' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
 #' screeplot(pca_iris)
-screeplot.principal_components <- function(pca, threshold = NULL) {
+screeplot.principal_components <- function(x, ..., threshold = NULL) {
+  pca <- x
   x <- pca$weights[,1]
   y <- pca$weights[,2]
   opar <- par(no.readonly = T) #stores current par settings

@@ -2,12 +2,14 @@
 % Please edit documentation in R/PCA.R
 \name{screeplot.principal_components}
 \alias{screeplot.principal_components}
-\title{Title}
+\title{Screeplot for principal_components objectr}
 \usage{
-\method{screeplot}{principal_components}(pca, threshold = NULL)
+\method{screeplot}{principal_components}(x, ..., threshold = NULL)
 }
 \arguments{
-\item{pca}{An object of class "principal components"}
+\item{x}{An object of class "principal_components"}
+
+\item{...}{generic arguments}
 
 \item{threshold}{A threshold that you desire the components to cross, will be plotted if value given}
 }
@@ -15,7 +17,7 @@
 A screeplot showing the weighting and cumulative weighting of the components
 }
 \description{
-Title
+Screeplot for principal_components objectr
 }
 \examples{
 pca_iris <- pca(iris[,-5], FALSE, 0.95)

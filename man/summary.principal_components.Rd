@@ -2,18 +2,20 @@
 % Please edit documentation in R/PCA.R
 \name{summary.principal_components}
 \alias{summary.principal_components}
-\title{Title}
+\title{Summary for principal component object}
 \usage{
-\method{summary}{principal_components}(ob)
+\method{summary}{principal_components}(object, ...)
 }
 \arguments{
-\item{ob}{An object of class "principal components"}
+\item{object}{An object of class "principal_components"}
+
+\item{...}{generic arguments}
 }
 \value{
 A summary providing the weights of each of the components
 }
 \description{
-Title
+Summary for principal component object
 }
 \examples{
 pca_iris <- pca(iris[,-5], FALSE, 0.95)

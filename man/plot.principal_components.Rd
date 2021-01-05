@@ -4,10 +4,12 @@
 \alias{plot.principal_components}
 \title{Biplot for principal components}
 \usage{
-\method{plot}{principal_components}(pca_ob, choices = c(1, 2), vectors = TRUE, vector_names = TRUE)
+\method{plot}{principal_components}(x, ..., choices = c(1, 2), vectors = TRUE, vector_names = TRUE)
 }
 \arguments{
-\item{pca_ob}{An object of class "principal components"}
+\item{x}{An object of class "principal_components"}
+
+\item{...}{generic arguments}
 
 \item{choices}{Indices declaring which of the PC's you want to plot}
 
