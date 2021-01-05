@@ -103,7 +103,7 @@ summary.principal_components <- function(ob) {
 #' @return A biplot of the principal components equivalent to that described by Gower and Hand (1996)
 #' @export
 #'
-#' @importFrom "graphics", "abline", "arrows", "axis", "legend", "lines","mtext", "par", "plot.window", "points", "title"
+#' @import graphics
 #' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
 #' plot(pca_iris, choices = c(1, 2),  vectors = TRUE, vector_names = TRUE)
 plot.principal_components <- function(pca_ob, choices = c(1, 2), vectors = TRUE, vector_names = TRUE) {
