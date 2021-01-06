@@ -50,7 +50,8 @@ pca <- function(X, standardize,  threshold_var) {
   var_explained <- cumsum(D)/sum(D)
   upto <- which(var_explained > threshold_var)[1]
 
-  pca_dat <- Zstar[,1:upto, drop = F]
+  pca_dat <- data.frame(Zstar[,1:upto, drop = F])
+  colnames(pca_dat) <- paste0("PC", 1:upto)
 
   component_weighting <- data.frame("Component" = 1:n, "Weight" = D/sum(D))
 
@@ -196,7 +197,7 @@ plot.principal_components <- function(x, ..., choices = c(1, 2), vectors = TRUE,
   }
 }
 
-#' Screeplot for principal_components objectr
+#' Screeplot for principal_components object
 #'
 #' @param x An object of class "principal_components"
 #' @param ... generic arguments
@@ -223,7 +224,7 @@ screeplot.principal_components <- function(x, ..., threshold = NULL) {
   lines(y~x, col = 'red', lwd = 3)
   points(x, cumsum(y), pch = 16)
   lines(cumsum(y) ~ x, lwd = 3)
-  lines(x = c(0.9, 4.1), y = c(threshold, threshold), lty = "dashed", lwd = 1)
+  lines(x = c(0.9, length((x) + 0.1)), y = c(threshold, threshold), lty = "dashed", lwd = 1)
   title(main = "Principal component weighting")
   legend("topright", inset=c(-0.31,0), legend=c("Weights","Cumulative Weights"), fill = c("red", "black"), xpd = TRUE)
   par(opar) # restores par settings to original
