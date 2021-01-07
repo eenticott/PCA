@@ -120,6 +120,7 @@ plot.principal_components <- function(x, ..., choices = c(1, 2), vectors = TRUE,
   j <- choices[2]
 
   # Force a square plot so that angles between vectors are better visually interpretable
+  opar <- par(no.readonly = TRUE)
   par(pty = "s")
   # Plot PCs against each other
   plot(pca_ob$components[,choices],
@@ -195,6 +196,7 @@ plot.principal_components <- function(x, ..., choices = c(1, 2), vectors = TRUE,
            pos = c(rep(1, nrow(pca_ob$pca_directions))))
     }
   }
+  par() <- opar
 }
 
 #' Screeplot for principal_components object
@@ -226,8 +228,9 @@ screeplot.principal_components <- function(x, ..., threshold = -1) {
   lines(cumsum(y) ~ x, lwd = 3)
   lines(x = c(0.9, length((x) + 0.1)), y = c(threshold, threshold), lty = "dashed", lwd = 1)
   title(main = "Principal component weighting")
-  legend("topright", inset=c(-0.2,0), legend=c("Weights","Cumulative Weights"), fill = c("red", "black"), xpd = TRUE)
+  legend("topright", inset=c(-0.4,0), legend=c("Weights","Cumulative Weights"), fill = c("red", "black"), xpd = TRUE)
   par(opar) # restores par settings to original
 }
+
 
 
