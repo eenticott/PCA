@@ -196,7 +196,7 @@ plot.principal_components <- function(x, ..., choices = c(1, 2), vectors = TRUE,
            pos = c(rep(1, nrow(pca_ob$pca_directions))))
     }
   }
-  par() <- opar
+  par(opar)
 }
 
 #' Screeplot for principal_components object
