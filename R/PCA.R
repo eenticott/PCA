@@ -211,7 +211,7 @@ plot.principal_components <- function(x, ..., choices = c(1, 2), vectors = TRUE,
 #'
 #' @examples pca_iris <- pca(iris[,-5], FALSE, 0.95)
 #' screeplot(pca_iris)
-screeplot.principal_components <- function(x, ..., threshold = NULL) {
+screeplot.principal_components <- function(x, ..., threshold = -1) {
   pca <- x
   x <- pca$weights[,1]
   y <- pca$weights[,2]
@@ -226,7 +226,8 @@ screeplot.principal_components <- function(x, ..., threshold = NULL) {
   lines(cumsum(y) ~ x, lwd = 3)
   lines(x = c(0.9, length((x) + 0.1)), y = c(threshold, threshold), lty = "dashed", lwd = 1)
   title(main = "Principal component weighting")
-  legend("topright", inset=c(-0.31,0), legend=c("Weights","Cumulative Weights"), fill = c("red", "black"), xpd = TRUE)
+  legend("topright", inset=c(-0.2,0), legend=c("Weights","Cumulative Weights"), fill = c("red", "black"), xpd = TRUE)
   par(opar) # restores par settings to original
 }
+
 

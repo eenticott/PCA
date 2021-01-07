@@ -2,9 +2,9 @@
 % Please edit documentation in R/PCA.R
 \name{screeplot.principal_components}
 \alias{screeplot.principal_components}
-\title{Screeplot for principal_components objectr}
+\title{Screeplot for principal_components object}
 \usage{
-\method{screeplot}{principal_components}(x, ..., threshold = NULL)
+\method{screeplot}{principal_components}(x, ..., threshold = -1)
 }
 \arguments{
 \item{x}{An object of class "principal_components"}
@@ -17,7 +17,7 @@
 A screeplot showing the weighting and cumulative weighting of the components
 }
 \description{
-Screeplot for principal_components objectr
+Screeplot for principal_components object
 }
 \examples{
 pca_iris <- pca(iris[,-5], FALSE, 0.95)
