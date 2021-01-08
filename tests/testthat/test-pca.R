@@ -8,5 +8,11 @@ test_that("centre works", {
 
 test_that("pca works",{
   data(iris)
+  ref <- pca(iris[-5], F, 0.999)
   expect_equal(prcomp(iris[-5])$rotation, pca(iris[-5], F, 0.999)$pca_directions)
+  print(ref)
+  summary(ref)
+  plot(ref)
+  screeplot(ref)
 })
+
